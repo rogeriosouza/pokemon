@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pokemon App
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="searchQuery"
+                   placeholder="Search"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let dragon of pokemon; let i = index;" (click)="showInfo(dragon.name)">
+      <h2>{{ dragon.name }}</h2>
+
+      <ion-thumbnail item-right>
+        <img src="assets/images/{{i + 1}}.png">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+</ion-content>
